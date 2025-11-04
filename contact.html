@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Together We Rise</title>
+<style>
+/* Popup Styles */
+.popup {
+  display: none; /* hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease;
+}
+
+.popup-content {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.3s ease;
+}
+
+.popup-content h3 {
+  color: #AA336A;
+  margin-bottom: 10px;
+}
+
+.popup-content p {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.popup-content button {
+  background-color: #7393B3;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.popup-content button:hover {
+  background-color: #AA336A;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: #f6f9fa;
+  }
+
+  header {
+    background: linear-gradient(135deg, #AA336A, #7393B3);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+  }
+
+  nav {
+    background-color: #9FE2BF;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  nav a {
+    color: #222;
+    text-decoration: none;
+    padding: 15px 25px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  nav a:hover {
+    background-color: #7393B3;
+    color: white;
+    border-radius: 5px;
+  }
+
+  section {
+    padding: 50px 20px;
+    max-width: 600px;
+    margin: auto;
+  }
+
+  h2 {
+    color: #AA336A;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+
+  button {
+    background-color: #7393B3;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #AA336A;
+    transform: translateY(-2px);
+  }
+
+  footer {
+    background-color: #7393B3;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Contact Us</h1>
+  <p>We’d love to hear from you! Connect with us for any queries or collaborations.</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About Us</a>
+  <a href="ngo.html">Listed NGOs</a>
+  <a href="whatwedo.html">What We Do</a>
+  <a href="events.html">Events</a>
+  <a href="contact.html">Contact Us</a>
+</nav>
+
+<section>
+  <h2>Get in Touch</h2>
+
+  <form>
+        <label for="name">Name:</label>
+          <input type="text" id="name" name="name" placeholder="Enter your Name" pattern="[A-Za-z\s]+" title="Only letters allowed" required>
+
+              <label for="email">Email:</label>
+      <input type="email" id ="email" name="email" placeholder="Enter your Email" required >
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" pattern="\d+" title="Only numbers allowed" required>
+
+    <label for="subject">Select the Subject:</label>
+    <select id="subject" name="subject" required>
+      <option value="" disabled selected>-- Choose an option --</option>
+      <option value="donations">Donations</option>
+      <option value="csr">CSR</option>
+      <option value="ngo">NGO</option>
+      <option value="needy">Needy</option>
+    </select>
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="5" placeholder="Write your message here..."></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+
+  <!-- ✅ Custom Thank You Popup -->
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <h3>Thank You!</h3>
+    <p>Your message has been received. We’ll get back to you soon. 💌</p>
+    <button id="closePopup">OK</button>
+  </div>
+</div>
+
+</section>
+
+<footer>
+  <p>&copy; 2025 Together We Rise | Built with ❤️ to fight poverty</p>
+</footer>
+
+<script>
+  const form = document.querySelector("form");
+  const popup = document.getElementById("popup");
+  const closePopup = document.getElementById("closePopup");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault(); // stop page reload
+    popup.style.display = "flex"; // show popup
+    form.reset(); // clear form fields
+  });
+
+  closePopup.addEventListener("click", () => {
+    popup.style.display = "none"; // hide popup
+  });
+</script>
+
+</body>
+</html>

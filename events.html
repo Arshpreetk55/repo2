@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Events | Together We Rise</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+  body { background-color: #f6f9fa; color: #333; }
+  header {
+    background: linear-gradient(135deg, #7393B3, #AA336A);
+    color: white; text-align: center; padding: 100px 20px;
+  }
+  nav {
+  background-color: #9FE2BF;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav a {
+  color: #222;
+  text-decoration: none;
+  padding: 15px 25px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  background-color: #7393B3;
+  color: white;
+  border-radius: 5px;
+}
+
+  .events {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px; max-width: 1100px; margin: 60px auto; padding: 20px;
+  }
+  .event-card {
+    background: white; border-radius: 12px; box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    padding: 20px; text-align: center; transition: 0.3s;
+  }
+  .event-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  }
+  .event-card img {
+    width: 100%; height: 200px; border-radius: 12px; object-fit: cover;
+  }
+  h2 { text-align: center; color: #AA336A; margin-top: 40px; }
+  footer { background-color: #7393B3; color: white; text-align: center; padding: 20px; }
+</style>
+</head>
+<body>
+
+  <header>
+    <h1>Our Events</h1>
+    <p>Join us in our upcoming drives, campaigns, and awareness programs.</p>
+  </header>
+
+  <nav>
+      <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="ngo.html">Listed NGOs</a>
+    <a href="whatwedo.html">What We Do</a>
+    <a href="events.html">Events</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+
+  <h2>Upcoming Events</h2>
+  <div class="events">
+    <div class="event-card">
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" alt="Fundraiser">
+      <h3>Fundraising Marathon 2025</h3>
+      <p>Help raise funds for education programs in rural areas. Join us in Delhi on 15th December 2025.</p>
+    </div>
+
+    <div class="event-card">
+      <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786" alt="Food Drive">
+      <h3>Community Food Drive</h3>
+      <p>Distribute meals and essentials to families in need — Pune, 5th January 2026.</p>
+    </div>
+
+    <div class="event-card">
+      <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca" alt="Workshop">
+      <h3>Skill Development Workshop</h3>
+      <p>Empower women with digital literacy and vocational training in Lucknow, March 2026.</p>
+    </div>
+  </div>
+
+  <footer>
+       <p>&copy; 2025 Together We Rise | Built with ❤️ to fight poverty</p>
+  </footer>
+
+</body>
+</html>
